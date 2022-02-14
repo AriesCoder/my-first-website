@@ -1,0 +1,29 @@
+:root{
+    --clr-neon: hsl(317 100% 54%);
+    --clr-darkbrown: hsl(323, 21%, 16%);
+    --clt-main: #FDEFF4;
+    --clt-grey: #b6b6b6; 
+    --clr-darkGreen: rgb(0, 106, 23);
+    --clr-lightGreen: rgba(133, 216, 60, 0.591);
+    --clr-yellowNeon: #FFFFC7;
+    --clr-greenNeon: #B4FE98;
+}
+.background {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -1;
+    opacity: 0.9;
+  }
+  .background img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }

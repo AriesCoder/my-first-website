@@ -9,23 +9,33 @@
     
 </head>
 <body>
+    <!-- navigation bar -->
+    <nav class="topnav"> 
+          
+        <a href="./home.html" class="home" id="navbtn">HOME</a>
+        <div class="dropdown" >  
+            <button class="dropbtn" id="navbtn">RECIPES</button>
+            <div class="dropdown-content">
+                <a href="./link1.html">link1</a>
+                <a href="./link2.html">link2</a>
+                <a href="#">link3</a>
+            </div>
+        </div>   
+        <a href="./menu.html" class="menu" id="navbtn">MENU</a>
+        <a class="sign-in" id="navbtn">SIGN IN</a>
+        <a><input
+                class="search-field"
+                type="search" 
+                placeholder="Find a Recipe..." /></a>
+     
+    </nav>
       <!-- The background video -->
     <div class="background">
         <video autoplay muted loop id="myVideo">
             <source src="/source/food3.mp4" type="video/mp4"></a>
         </video>  
     </div>
-    <!-- Optional: some overlay text to describe the video -->
-    <nav class="topnav"> 
-        <a style="padding: 0 20px 0 20px" class="home" id="navbtn">HOME</a>
-        <a style="padding: 0 10px 0 10px" class="recipes" id="navbtn">RECIPES</a>
-        <a style="padding: 0 20px 0 20px" class="menu" id="navbtn">MENU</a>
-        <a style="padding: 0 13px 0 13px" class="sign-in" id="navbtn">SIGN IN</a>
-        <a><input
-                class="search-field"
-                type="search" 
-                placeholder="Find a Recipe..." /></a> 
-    </nav>
+    
     <!-- WELCOME -->
     <div class="text-box">
         <span id="welcome">M</span>
