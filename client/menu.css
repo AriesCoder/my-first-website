@@ -8,6 +8,9 @@
     --clr-yellowNeon: #FFFFC7;
     --clr-greenNeon: #B4FE98;
 }
+body{
+  /* text-align: center; */
+}
 .background {
     position: fixed; 
     top: -50%; 
@@ -27,3 +30,60 @@
     min-width: 50%;
     min-height: 50%;
   }
+
+  /* create table for first recipe */
+
+.text-container{
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-darkGreen);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+  display: flex;
+  margin: 150px 250px ;
+}
+  .firstImage{
+    width: 300px;
+    height: 250px;
+    background-color: var(--clr-lightGreen);
+    display: flex;
+    margin: -480px 0px 0 850px;
+  }
+
+.text-container2{
+  box-sizing: content-box;
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-greenNeon);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+  display: inline-flexbox;
+  margin: 200px 0 0 500px ;
+  top:20px
+}
+.secondImage{
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  margin: -330px 0px 0 300px;
+}
+
+.text-container3{
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-darkGreen);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+  display: flex;
+  margin: 150px 250px 350px;
+  
+}
+.thirdImage{
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  margin: -680px 850px 150px;
+  
+}
