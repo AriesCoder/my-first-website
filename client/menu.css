@@ -1,5 +1,4 @@
 :root{
-    --clr-neon: hsl(317 100% 54%);
     --clr-darkbrown: hsl(323, 21%, 16%);
     --clt-main: #FDEFF4;
     --clt-grey: #b6b6b6; 
@@ -8,82 +7,143 @@
     --clr-yellowNeon: #FFFFC7;
     --clr-greenNeon: #B4FE98;
 }
-body{
-  /* text-align: center; */
+*{
+  margin: 0;
+  padding: 0;
 }
-.background {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-    z-index: -1;
-    opacity: 0.9;
-  }
-  .background img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }
+/* background */
+body{
+  background: fixed;
+  background-image: url(/source/cookingBG.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
-  /* create table for first recipe */
-
+/* create main section */
+main{
+  width: 100%;
+  height:80%;
+  display: flex;
+  justify-content: center;
+}
+.recipes-container{
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px;
+  width: 70%;
+  height: 100%;
+  gap: 50px 0px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* create table for first recipe */
 .text-container{
+  position: relative;
   width: 700px;
   height: 400px;
   background-color: var(--clr-darkGreen);
   border-radius: 20px;
   box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
-  display: flex;
-  margin: 150px 250px ;
 }
-  .firstImage{
-    width: 300px;
-    height: 250px;
-    background-color: var(--clr-lightGreen);
-    display: flex;
-    margin: -480px 0px 0 850px;
-  }
+.firstImage{
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  right: -230px;
+  top: 80px;
+}
 
 .text-container2{
-  box-sizing: content-box;
+  position: relative;
+  align-self: flex-end;
   width: 700px;
   height: 400px;
   background-color: var(--clr-greenNeon);
   border-radius: 20px;
   box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
-  display: inline-flexbox;
-  margin: 200px 0 0 500px ;
-  top:20px
 }
 .secondImage{
+  position: absolute;
   width: 300px;
   height: 250px;
   background-color: var(--clr-lightGreen);
   display: flex;
-  margin: -330px 0px 0 300px;
+  left: -230px;
+  top: 80px;
 }
 
 .text-container3{
+  position: relative;
   width: 700px;
   height: 400px;
   background-color: var(--clr-darkGreen);
   border-radius: 20px;
   box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
-  display: flex;
-  margin: 150px 250px 350px;
   
 }
 .thirdImage{
+  position: absolute;
   width: 300px;
   height: 250px;
   background-color: var(--clr-lightGreen);
   display: flex;
-  margin: -680px 850px 150px;
-  
+  right: -230px;
+  top: 80px;
+}
+
+.text-container4{
+  position: relative;
+  align-self: flex-end;
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-greenNeon);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+}
+.fourthImage{
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  left: -230px;
+  top: 80px;
+}
+.text-container5{
+  position: relative;
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-darkGreen);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+}
+.fifthImage{
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  right: -230px;
+  top: 80px;
+}
+.text-container6{
+  position: relative;
+  align-self: flex-end;
+  width: 700px;
+  height: 400px;
+  background-color: var(--clr-greenNeon);
+  border-radius: 20px;
+  box-shadow: 11px 19px 21px 0px var(--clr-darkbrown);
+}
+.sixthImage{
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background-color: var(--clr-lightGreen);
+  display: flex;
+  left: -230px;
+  top: 80px;
 }

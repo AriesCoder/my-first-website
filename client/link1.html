@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="initial-scale=1.0"> 
     <title>my web</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./menu.css">
+    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./link1.css">
     
 </head>
 <body>
-    <!-- navigation bar -->
-    <!-- navigation bar -->
-    <nav class="topnav"> 
-          
+<!-- navigation bar -->
+<header>
+    <nav class="topnav">         
         <a href="./home.html" class="home" id="navbtn">HOME</a>
-        <div class="dropdown" >  
+        <div class="dropdown">  
             <button class="dropbtn" id="navbtn">RECIPES</button>
             <div class="dropdown-content">
                 <a href="./link1.html">link1</a>
@@ -23,19 +22,56 @@
                 <a href="#">link3</a>
             </div>
         </div>   
-        <a href="./menu.html" class="menu" id="navbtn">MENU</a>
-        <a class="sign-in" id="navbtn">SIGN IN</a>
-        <a><input
+        <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
+        <a><input id="navbtn"
                 class="search-field"
                 type="search" 
                 placeholder="Find a Recipe..." /></a>
-     
+        <div class="sign-in">
+            <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
+        </div>
     </nav>
-    <!-- background -->
-    <div class="background"><img src="/source/orangeCookingBG.jpeg" ></div>
-    
+</header>
 
-    
+<main>
 
 
+</main>
+<footer>
+<!-- comment container -->
+    <div class="cmt-container">
+    <!-- Comment -->
+        <div class="cmt-box">
+            <h2>Leave Us a Comment</h2>
+            <form>
+                <textarea placeholder="Add Your Comment"></textarea>
+                <div class="btn">
+                    <input type="submit" value="Comment">
+                    <button id="clear">Cancel</button>
+                </div>
+            </form>
+        </div>
+    <!-- comments table -->
+        <div class="cmt-table">
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            
+        </div>
+    </div>
+</footer>
+  
+    <script src='./link1.js'></script>
 </body>
+</html>

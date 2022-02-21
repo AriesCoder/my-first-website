@@ -5,38 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="initial-scale=1.0"> 
     <title>my web</title>
-    <link rel="stylesheet" href="./style.css">
-    
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./layout.css">
 </head>
 <body>
-    <!-- navigation bar -->
-    <nav class="topnav"> 
-          
-        <a href="./home.html" class="home" id="navbtn">HOME</a>
-        <div class="dropdown" >  
-            <button class="dropbtn" id="navbtn">RECIPES</button>
-            <div class="dropdown-content">
-                <a href="./link1.html">link1</a>
-                <a href="./link2.html">link2</a>
-                <a href="#">link3</a>
+    <header class="nav-container">
+<!-- navigation bar -->
+        <nav class="topnav">         
+            <a href="./home.html" class="home" id="navbtn">HOME</a>
+            <div class="dropdown" >  
+                <button class="dropbtn" id="navbtn">RECIPES</button>
+                <div class="dropdown-content">
+                    <a href="./link1.html">link1</a>
+                    <a href="./link2.html">link2</a>
+                    <a href="#">link3</a>
+                </div>
+            </div>   
+            <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
+            <a><input id="navbtn"
+                    class="search-field"
+                    type="search" 
+                    placeholder="Find a Recipe..." /></a>
+
+            <div class="sign-in">
+                <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>
+                <!-- sign in form -->
+                <div class="form-popup" id="myForm">
+                    <form action="/action_page.php" class="form-container">
+                        <h1>Login</h1>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        <a style="font-size: 14px;" href="https://www.">Create an Account</a>
+                    </form>
+                </div> 
             </div>
-        </div>   
-        <a href="./menu.html" class="menu" id="navbtn">MENU</a>
-        <a class="sign-in" id="navbtn">SIGN IN</a>
-        <a><input
-                class="search-field"
-                type="search" 
-                placeholder="Find a Recipe..." /></a>
-     
-    </nav>
-      <!-- The background video -->
+        </nav>
+
+        <script>
+            function openForm() {
+              document.getElementById("myForm").style.display = "block";
+            }
+            
+            function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+    </header>
+    <main>
+<!-- The background video -->
     <div class="background">
         <video autoplay muted loop id="myVideo">
             <source src="/source/food3.mp4" type="video/mp4"></a>
         </video>  
     </div>
     
-    <!-- WELCOME -->
+<!-- WELCOME -->
     <div class="text-box">
         <span id="welcome">M</span>
         <span id="welcome">O</span>
@@ -58,8 +88,8 @@
     <img src="/source/insta.jpeg" class="ig" id="follow"></a>
     <a href="https://www.facebook.com/login/">
     <img src="/source/fb.jpeg" class="fb" id="follow"></a>
-  
 </div>
+</main>
     
   
 

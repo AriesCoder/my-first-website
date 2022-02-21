@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="initial-scale=1.0"> 
     <title>my web</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./layout.css">
     <link rel="stylesheet" href="./menu.css">
     
 </head>
 <body>
+<header>
     <!-- navigation bar -->
-    <nav class="topnav"> 
-          
+    <nav class="topnav">         
         <a href="./home.html" class="home" id="navbtn">HOME</a>
         <div class="dropdown" >  
             <button class="dropbtn" id="navbtn">RECIPES</button>
@@ -22,40 +22,59 @@
                 <a href="#">link3</a>
             </div>
         </div>   
-        <a href="./menu.html" class="menu" id="navbtn">MENU</a>
-        <a class="sign-in" id="navbtn">SIGN IN</a>
-        <a><input
+        <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
+        <a><input id="navbtn"
                 class="search-field"
                 type="search" 
                 placeholder="Find a Recipe..." /></a>
-     
+        <div class="sign-in">
+            <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
+        </div>
     </nav>
-    <!-- background -->
-    <div class="background"><img src="/source/cookingBG.jpeg" ></div>
+</header>
+<main>
     <!-- RECIPES BOXES -->
     <div class="recipes-container">
         <div class="text-container">
-            
+            <div class="firstImage">
+                image
+            </div>
         </div>
-        <div class="firstImage">
-            image
-        </div>
+        
         <div class="text-container2">
-            
+            <div class="secondImage">
+                image2
+            </div>
         </div>
-        <div class="secondImage">
-            image
-        </div>
+        
         <div class="text-container3">
-            
+            <div class="thirdImage">
+                image3
+            </div>
         </div>
-        <div class="thirdImage">
-            image
+        
+        <div class="text-container4">
+            <div class="fourthImage">
+                image4
+            </div>
         </div>
+        
+        <div class="text-container5">
+            <div class="fifthImage">
+                image5
+            </div>
+        </div>
+        
+        <div class="text-container6">
+            <div class="sixthImage">
+                image6
+            </div>
+        </div>
+        
+        
     </div>
-    
+</main>
 
-    
 
 
 </body>

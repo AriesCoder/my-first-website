@@ -1,0 +1,117 @@
+:root{
+    --clr-darkbrown: hsl(323, 21%, 16%);
+    --clt-darkOrange: #c97f00;
+    --clt-grey: #b6b6b6; 
+    --clr-darkGreen: rgb(0, 106, 23);
+    --clr-lightGreen: rgba(133, 216, 60, 0.591);
+    --clr-yellowNeon: #FFFFC7;
+    --clr-greenNeon: #B4FE98;
+    --clr-lightOrange: rgba(255, 196, 0, 0.694);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* background */
+body{
+    background-image: url(/source/orangeCookingBG.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+button{
+    cursor: pointer;
+    border: none;
+}
+
+/* main */
+main{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    z-index: -1;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    height:300px;
+    padding: 30px;
+}
+/* comment container */
+.cmt-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 800px;
+    box-sizing: border-box;
+}
+/* comments-table */
+.cmt-table{
+    /* border-collapse: collapse; */
+    width: 95%;
+    background-color: var(--clr-yellowNeon);
+    height: 80%;
+    overflow: scroll;
+    padding: 10px 10px 10px 10px;
+    font-size: 12;
+    font-family: 'Courier New', Courier, monospace;
+    border: var(--clr-darkGreen) 2px solid;
+}
+
+/* comment */
+.cmt-box{
+    width: 100%;
+    border: 2px solid var(--clr-darkGreen);
+    padding: 15px 10px;
+    background-color: var(--clr-yellowNeon);
+    border-radius: 20px;
+    align-self: flex-end;
+}
+.cmt-box form textarea{
+    background-color: var(--clr-yellowNeon);
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+textarea{
+    height: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--clr-darkGreen);
+    margin-bottom: 10px;
+    resize: none;
+    outline: none;
+    transition: .5s;
+}
+
+input[type='submit'], #clear{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type='submit']{
+    color: var(--clr-greenNeon);
+    background-color: var(--clr-darkGreen);
+}
+#clear{
+    color: var(--clr-darkGreen);
+    background-color: transparent;
+}
+.btn{
+    display: none;
+}
+
