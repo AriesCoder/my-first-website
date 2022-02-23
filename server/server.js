@@ -8,6 +8,7 @@ app.get("/", function(req, res){
 })
 
 app.use(express.static(path.join(__dirname, '../client')))
+app.use(express.static(path.join(__dirname, '../source')))
 
 const port = process.env.PORT || 4005
 
