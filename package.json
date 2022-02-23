@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "@joeattardi/emoji-button": "^4.6.2"
-  }
+  },
+  "name": "my-first-web",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriesCoder/my-first-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AriesCoder/my-first-website/issues"
+  },
+  "homepage": "https://github.com/AriesCoder/my-first-website#readme",
+  "description": ""
 }
