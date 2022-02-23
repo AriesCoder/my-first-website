@@ -93,7 +93,7 @@
         text-shadow: 0px 0px 35px var(--clr-darkGreen);
     }
 }
- #welcome:nth-child(1)
+#welcome:nth-child(1)
 {
     animation-delay: 0.5s;
 }
