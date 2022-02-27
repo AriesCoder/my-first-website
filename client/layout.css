@@ -8,13 +8,7 @@
     --clr-greenNeon: #B4FE98;
 }
 *{box-sizing: border-box;}
-/* body, html {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom:0;
-} */
+
 /* navigation  */
 .topnav{
     display: flex;

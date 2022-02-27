@@ -18,7 +18,7 @@
 /* background */
 body{
   background: fixed;
-  background-image: url(/source/cookingBG.jpeg);
+  background-image: url(./source/cookingBG.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -46,7 +46,7 @@ main{
   position: relative;
   width: 700px;
   height: 400px;
-  background-image: url(/source/spring-rolls.jpeg);
+  background-image: url(./source/spring-rolls.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -58,7 +58,7 @@ main{
   align-self: flex-end;
   width: 700px;
   height: 400px;
-  background-image: url(/source/VNpancake.jpeg);
+  background-image: url(./source/VNpancake.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -69,7 +69,7 @@ main{
   position: relative;
   width: 700px;
   height: 400px;
-  background-image: url(/source/Pho.jpeg);
+  background-image: url(./source/Pho.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -82,7 +82,7 @@ main{
   align-self: flex-end;
   width: 700px;
   height: 400px;
-  background-image: url(/source/ComTam.jpeg);
+  background-image: url(./source/ComTam.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -93,7 +93,7 @@ main{
   position: relative;
   width: 700px;
   height: 400px;
-  background-image: url(/source/VNSandwich.jpeg);
+  background-image: url(./source/VNSandwich.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
