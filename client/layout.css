@@ -29,6 +29,7 @@
     background-color: var(--clr-darkGreen);
     color: var(--clr-greenNeon);
     opacity: 0.7;
+    height: 30px;
 }
 #navbtn:hover{
     background: var(--clr-darkGreen);

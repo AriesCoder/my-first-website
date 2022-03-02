@@ -15,15 +15,16 @@ module.exports = {
         let{name, rating, comment} = req.body
         sequelize.query(`INSERT INTO comments (name, rating, comment)
         VALUES('${name}', ${rating}, '${comment}');`)
-        .then(dbRes => res.status(200).send(dbRes[0]))
+        .then(dbRes =>
+            res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
 
     getComments: (req, res) => {
         sequelize.query(`SELECT * 
-        FROM comments 
-        `)
-        .then(dbRes => res.status(200).send(dbRes[0]))
+        FROM comments
+        `) 
+        .then(dbArr => res.status(200).send(dbArr[0]))
         .catch(err => console.log(err))
     },
 
@@ -36,19 +37,28 @@ module.exports = {
         .catch(err => console.log(err))
     },
 
-    seed: (req,res) =>{sequelize.query(
-        `drop table if exists comments;
-
-        CREATE TABLE comments (
-            comment_id SERIAL PRIMARY KEY,
-            name VARCHAR(200),
-            rating INT,
-            comment TEXT);
-        `)
-        .then(() => {
-            console.log('DB seeded!')
-            res.sendStatus(200)
+    filterRating: (req, res) =>{
+        let {rate} = req.params
+        sequelize.query(`SELECT * FROM comments
+        WHERE rating = ${rate};`)
+        .then(dbRes => {
+            console.log(dbRes[0])
+            res.status(200).send(dbRes[0])
         })
-        .catch(err => console.log('error seeding DB', err))
-    }
+        .catch(err => console.log(err))
+    },
+
+    getRecipeByName: (req, res) =>{
+        let {name} = req.params
+        console.log(name)
+        sequelize.query(`SELECT * FROM recipes
+        WHERE name = '${name}';`)
+        .then(dbRes => {
+            console.log(dbRes[0])
+            res.status(200).send(dbRes[0])
+        })
+        .catch(err => console.log(err))
+    },
+   
+        
 }

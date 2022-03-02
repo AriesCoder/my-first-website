@@ -16,6 +16,7 @@
 
 /* background */
 body{
+    background: fixed;
     background-image: url(./source/yellowCooking.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,12 +35,57 @@ main{
     justify-content: space-between;
     z-index: -1;
 }
-.left{
-    background-color: #fcffe3;
+.recipe-container{
+    
     width: 70%;
     height: 100%;
-    opacity: 0.3;
+    margin: 50px
 }
+.recipe-name{
+    padding: 10px;
+    font-size: 26px;
+    color: var(--clr-darkGreen);
+    box-shadow: 0px 5px 8px 0px var(--clr-darkbrown);
+    border-radius: 5px;
+    width: 520px;
+    height: 50px;
+    text-align: center;
+}
+.recipe-rating{
+    background-color: transparent;
+    height: 150px;
+    width: 350px;
+}
+.recipe-image{
+    margin-top: 20px;
+    width: 700px;
+    height: 400px;
+    border-radius: 50px;
+}
+.ingredients{
+    font-size: 20px;
+    color: var(--clr-darkGreen);
+
+}
+.instructions{
+    font-size: 20px;
+    color: var(--clr-darkGreen);
+    background-color: var(--clr-yellowNeon);
+    border-radius: 10px;
+    padding: 15px;
+}
+.source{
+    font-size: 20px;
+    padding: 10px;
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    color: var(--clr-yellowNeon);
+    background-color: var(--clr-darkGreen);
+    text-align: center;
+}
+
+
 .checked {
     color: orange;
 }
@@ -48,7 +94,6 @@ main{
     display: block;
     height: 100%;
     width: 350px;
-    /* background-color: #B4FE98; */
     margin: 50px;
 }
 .review{
@@ -126,7 +171,7 @@ main{
     opacity: 1;
 }
 #comment-list{
-    height: 500PX;
+    height: 700PX;
     width: 100%;
     overflow: scroll;
 }
@@ -142,15 +187,15 @@ main{
     cursor: pointer;
     border-radius: 5px;
     width: 70px;
-    opacity: 0.7;
+    opacity: 1;
     font-family: inherit;
 }
   
 .filterbtn:hover, .filterbtn:focus {
-    opacity: 1;
+    opacity: 0.7;
 }
   
-.dropdown {
+.fil-dropdown {
     position: relative;
     display: inline-block;
 }
@@ -162,21 +207,25 @@ main{
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
     border-radius: 5px;
 }
   
-.filter-content a {
+.filter-content button {
     color: var(--clr-darkGreen);
+    background-color: var(--clr-yellowNeon);
     padding: 10px 12px;
     text-decoration: none;
+    width:170px;
     display: block;
 }
   
-.dropdown a:hover {background-color: var(--clr-greenNeon)}
+.fil-dropdown button:hover {
+    background-color: var(--clr-darkGreen);
+    color: var(--clr-yellowNeon);
+}
   
 .show {display: block;}
-
 
 /* comment cards */
 .comment-card{
@@ -187,6 +236,8 @@ main{
     color: var(--clr-darkGreen);
     margin-top: 10px;
     padding: 10px;
+    box-shadow: 6px 6px 9px 6px var(--clr-darkbrown);
+    margin: 25px;
 }
 .comment-card > button{
     margin-top: 5px;
@@ -196,6 +247,27 @@ main{
     border-radius: 5px;
 }
 
+/* filtered comment */
+.filter-container{
+    position: absolute;
+    display: flexbox;
+    height: 500px;
+    width: 400px;
+    overflow: auto;
+    z-index: 5;
+    align-self: center;
+    left: 30%;
+    top:200px;
+}
+.closebutton{
+    background-color: var(--clr-darkGreen);
+    color: var(--clr-yellowNeon);
+    border-radius: 40%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    box-shadow: 0px 3px 8px 0px var(--clr-darkbrown)
+}
 
 /* footer{
     height: 10%;

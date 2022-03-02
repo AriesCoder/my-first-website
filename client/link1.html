@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="initial-scale=1.0"> 
-    <title>my web</title>
+    <title>link1</title>
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="link1.css">
     
@@ -17,9 +17,9 @@
         <div class="dropdown">  
             <button class="dropbtn" id="navbtn">RECIPES</button>
             <div class="dropdown-content">
-                <a href="./link1.html">Spring rolls</a>
-                <a href="./link2.html">Pho</a>
-                <a href="#">link3</a>
+                <a href="./link1.html">Pho</a>
+                <a href="./link2.html">Spring rolls</a>
+                <a href="./link3.html">Vietnamese Pancake</a>
             </div>
         </div>   
         <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
@@ -34,14 +34,33 @@
 </header>
 
 <main>
-    <div class="left">
-        <h2>Star Rating</h2>
+<!-- recipe -->
+    <section class="recipe-container">
+        <!-- name -->
+        <h1 class="recipe-name"></h1><br>
+        <!-- rating -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-    </div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span><br>
+        <!-- image -->
+        <img src="./source/Beef-Pho-link1.jpeg" class="recipe-image">
+        
+        <!-- ingredients -->
+        <div>
+            <h3 style="color:darkgreen; padding:10px">INGREDIENTS:</h3> 
+            <p class="ingredients"></p>
+        </div>
+        <!-- instructions -->
+        <div>
+            <h3 style="color:darkgreen; padding:10px">INSTRUCTIONS:</h3>
+            <p class="instructions"></p>
+        </p>
+        <!-- source -->
+        <div class="source"></div>
+    </section>
 <!-- REVIEW     -->
     <aside class="review-container">
         <form class="review">
@@ -68,19 +87,25 @@
             
             <button class="add">Submit</button>
         </form>
-<!-- filter comment -->
-        <div class="dropdown">
+        <!-- filter comment -->
+        <div class="fil-dropdown">
             <button onclick="dropDownBtn()" class="filterbtn">Filter</button>
-            <div id="filter-btn" class="filter-content">
-            <a>Ascending rating</a>
-            <a>Descending rating</a>
+            <div id="filtercontent" class="filter-content">
+                <button class="stars active" onclick="getRating('5')">5-star rating</button>
+                <button class="stars" onclick="getRating('4')">4-star rating</button>
+                <button class="stars" onclick="getRating('3')">3-star rating</button>
+                <button class="stars" onclick="getRating('2')">2-star rating</button>
+                <button class="stars" onclick="getRating('1')" >1-star rating</button>
             </div>
         </div>
-
+<!-- comment list -->
         <section id="comment-list"></section>
-
-        
     </aside>
+
+<!-- pop-up filter -->
+    <!-- <button class="close-btn">X</button> -->
+    <div class="filter-container"></div>
+    
 
 </main>
 <footer></footer>
