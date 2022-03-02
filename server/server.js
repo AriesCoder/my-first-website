@@ -4,7 +4,7 @@ const path = require("path")
 const cors = require('cors')
 const app = express()
 const {SERVER_PORT} = process.env
-const {createComment, getComments, deleteComment, getAllRecipe, filterRating, getRecipeByName} = require('./controller.js')
+const {createComment, getComments, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 const {seed} = require('./seed.js')
 
 app.use(express.json())
@@ -24,8 +24,10 @@ app.post('/link1', createComment)
 app.delete('/link1/:id', deleteComment)
 //get filtered rating comments
 app.get('/link1/:rate', filterRating)
-//get recipe of link1
-app.get('/link1/recipes/:name', getRecipeByName)
+//get recipe
+app.get('/recipes/:name', getRecipeByName)
+//find recipe
+app.get('/search/:input', findRecipes)
 
 
 //DEV

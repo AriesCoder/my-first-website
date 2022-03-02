@@ -6,7 +6,7 @@ const dropBtn = document.querySelector('#filtercontent')
 const filterBtn = document.querySelector('.stars')
 const filterCmt = document.querySelector('.fil-cmt')
 const filterCont = document.querySelector('.filter-container')
-// const closeFilBtn = document.querySelector('.closebutton')
+// const searchRecipe = document.querySelector('.search-field')
 
 
 function dropDownBtn() {
@@ -82,15 +82,34 @@ function getRecipe(){
     }
     let name = page_map[pageTitle]
     console.log(1, pageTitle, name)
-    axios.get(`http://localhost:4004/link1/recipes/${name}`)
+    axios.get(`http://localhost:4004/recipes/${name}`)
       .then(res => {
-        console.log(2, res)
         recipeName.textContent += res.data[0].title
         ingredients.innerText += res.data[0].ingredients
         instructions.innerText += res.data[0].instructions
         source.textContent = res.data[0].source
       })
       .catch(err => console.log(err))
+}
+
+function searchRecipes(){
+  let input = document.querySelector('.search-field').value
+  let result = document.querySelector('.result-content')
+  let resultCard = ''
+  axios.get(`http://localhost:4004/search/${input}`)
+  .then(res => { 
+    if(res.data[0] === undefined){
+      resultCard = `<div class="result-card">
+      <a>No result</a>
+      </div>`   
+    }else{
+      resultCard = `<div class="result-card">
+          <a href="${res.data[0].link}">${input}</a>
+          </div>`   
+    }
+    result.innerHTML += resultCard 
+  })
+  .catch(err => console.log(err))
 }
 
 function getRating(rate){
@@ -115,7 +134,8 @@ function doClose(){
   filterCont.innerHTML = ''
 }
 
+
 getRecipe()
 getComments()
 form.addEventListener('submit', submitHandler)
-// closeFilBtn.addEventListener('click', doClose)
+// searchRecipe.addEventListener('submit', searchRecipes)

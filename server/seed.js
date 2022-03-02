@@ -21,11 +21,13 @@ module.exports = {
             title VARCHAR(500),
             instructions TEXT,
             ingredients TEXT,   
-            source VARCHAR(100)
+            source VARCHAR(100),
+            link VARCHAR(1000)
         );
 
-        INSERT INTO recipes (name, title, instructions, ingredients, source)
-        VALUES ('pho', 'Beef Pho (VIETNAMESE NOODLE SOUP)', 
+        INSERT INTO recipes (name, title, instructions, ingredients, source, link)
+        VALUES ('pho', 
+        'Beef Pho (VIETNAMESE NOODLE SOUP)', 
         'MAKE BROTH
         Add beef bones to a large pot that will hold at least 10 quarts. Then, cover bones with cold water. Place pot onto high heat and bring to a boil. Boil for 3 to 5 minutes. During this time, impurities and foam (or scum) will be released and rise to the top. Drain bones, discarding the water. Then, rinse bones with warm water and scrub stockpot to remove any residue that has stuck to the sides. Add the bones back to the stockpot and cover with 6 quarts of cold water.
         
@@ -93,7 +95,8 @@ module.exports = {
         Fish sauce
 
         Hoisin sauce',
-        'Source: Inspire Taste'), 
+        'Source: Inspire Taste',
+        './link1.html'), 
 
         ('springrolls', 
         'Spring Rolls',
@@ -113,7 +116,8 @@ module.exports = {
         1 garlic clove, grated or minced
         2 tsp sesame oil
         1 Tbsp shredded carrot',
-        'Source: NATASHASKITCHEN' ),
+        'Source: NATASHASKITCHEN',
+        './link2.html'),
         
         ('banhxeo', 
         'Vietnamese Pancake',
@@ -157,7 +161,8 @@ module.exports = {
         DIPPING SAUCE
         - Vietnamese prepared dipping sauce
         ', 
-        'Source: HUNGRY HUY');
+        'Source: HUNGRY HUY',
+        './link3.html');
 
         CREATE TABLE comments (
             comment_id SERIAL PRIMARY KEY,

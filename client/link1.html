@@ -6,10 +6,10 @@
     <meta name="viewport" content="initial-scale=1.0"> 
     <title>link1</title>
     <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="link1.css">
+    <link rel="stylesheet" href="recipes.css">
     
 </head>
-<body>
+<body class="link1">
 <!-- navigation bar -->
 <header>
     <nav class="topnav">         
@@ -22,11 +22,17 @@
                 <a href="./link3.html">Vietnamese Pancake</a>
             </div>
         </div>   
-        <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
-        <a><input id="navbtn"
+        <a href="./menu.html" class="menu" id="navbtn" >MENU</a>  
+
+
+        <div><input id="navbtn"
                 class="search-field"
                 type="search" 
-                placeholder="Find a Recipe..." /></a>
+                placeholder="Find a Recipe..." onsearch="searchRecipes()"/>
+            <div class="result-content"></div>
+
+        </div>
+
         <div class="sign-in">
             <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
         </div>

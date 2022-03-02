@@ -67,6 +67,14 @@
     padding: 7px 0 3px 15px;
     font-family: inherit;
 }
+.result-content{
+    height: 200px;
+    width: 250px;
+    background-color: #B4FE98;
+    text-align: center;
+    color: var(--clr-darkGreen);
+}
+
 a input::placeholder{
     font-size: 18px ;
     color: var(--clr-greenNeon);

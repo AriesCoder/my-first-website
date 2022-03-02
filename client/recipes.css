@@ -17,10 +17,18 @@
 /* background */
 body{
     background: fixed;
-    background-image: url(./source/yellowCooking.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.link1{
+    background-image: url(./source/yellowCooking.jpeg);
+}
+.link2{  
+    background-image: url(./source/whiteCookingBG.jpeg);
+}
+.link3{
+    background-image: url(./source/background.jpeg);
 }
 button{
     cursor: pointer;
@@ -65,8 +73,8 @@ main{
 .ingredients{
     font-size: 20px;
     color: var(--clr-darkGreen);
-
 }
+
 .instructions{
     font-size: 20px;
     color: var(--clr-darkGreen);
