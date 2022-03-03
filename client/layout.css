@@ -66,13 +66,21 @@
     width: 250px;
     padding: 7px 0 3px 15px;
     font-family: inherit;
+    color: var(--clr-greenNeon);
+    font-size: 18px;
+}
+.search-field::placeholder{
+    color: var(--clr-greenNeon)
 }
 .result-content{
-    height: 200px;
+    position: absolute;
+    display:none;
+    height: 50px;
     width: 250px;
     background-color: #B4FE98;
     text-align: center;
     color: var(--clr-darkGreen);
+    z-index: 2;
 }
 
 a input::placeholder{

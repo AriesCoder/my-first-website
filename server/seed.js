@@ -173,8 +173,8 @@ module.exports = {
             );
 
         INSERT INTO comments (name, rating, comment, recipe_id)
-        VALUES ('aries', 4, 'great', 1),
-        ('danny', 4, 'it looks delicious', 1), ('Mary', 3, 'hard to find ingredients', 1), ('Tom', 5, 'love it', 1); 
+        VALUES ('Amy', 4, 'great', 1),
+        ('Danny', 4, 'it looks delicious', 1), ('Mary', 3, 'hard to find ingredients', 1), ('Tom', 5, 'love it', 1), ('Christopher', 5, 'I tried to make it before. It is delicious, the crepe is crispy and the sauce is good too. Highly recommend!', 3), ('Tony',5, 'I would try to make it this weekend. Tried it before at the restaurant and it is so delicious',2 ), ('Tammy', 5, 'Love!love!love! Pho is so delicious. Thanks for the recipe!', 1), ('May', 4, 'It look so delicious but I am not a fan of vegetables', 3), ('Alton', 5, 'Tried it before and love it. Thanks for the recipe, now I can try to make it at home to enjoy with my family', 2); 
         
         `)
         .then(() => {

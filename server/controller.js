@@ -12,7 +12,7 @@ const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
 
 module.exports = {
     createComment: (req,res) =>{
-        let{name, rating, comment} = req.body
+        let {name, rating, comment} = req.body
         sequelize.query(`INSERT INTO comments (name, rating, comment)
         VALUES('${name}', ${rating}, '${comment}');`)
         .then(dbRes =>
@@ -20,9 +20,12 @@ module.exports = {
         .catch(err => console.log(err))
     },
 
-    getComments: (req, res) => {
+    getCmtByRecipeId: (req, res) => {
+        let recipeId = req.params.id
+        console.log('repId', recipeId)
         sequelize.query(`SELECT * 
         FROM comments
+        WHERE recipe_id = ${recipeId};
         `) 
         .then(dbArr => res.status(200).send(dbArr[0]))
         .catch(err => console.log(err))
@@ -42,7 +45,6 @@ module.exports = {
         sequelize.query(`SELECT * FROM comments
         WHERE rating = ${rate};`)
         .then(dbRes => {
-            console.log(dbRes[0])
             res.status(200).send(dbRes[0])
         })
         .catch(err => console.log(err))
@@ -53,7 +55,6 @@ module.exports = {
         sequelize.query(`SELECT * FROM recipes
         WHERE name = '${name}';`)
         .then(dbRes => {
-            console.log(dbRes[0])
             res.status(200).send(dbRes[0])
         })
         .catch(err => console.log(err))
@@ -62,9 +63,11 @@ module.exports = {
     findRecipes: (req, res) =>{
         let {input} = req.params
         sequelize.query(`SELECT link FROM recipes
-        WHERE (ingredients LIKE '%${input}%') OR (name LIKE '%${input}%');`)
+        WHERE (lower(ingredients) LIKE lower('%${input}%')) 
+        OR (lower(name) LIKE lower('%${input}%')) 
+        OR (lower(title) LIKE lower('%${input}%'))
+        OR (lower(instructions) LIKE lower('%${input}%'));`)
         .then(dbRes => {
-            console.log(dbRes[0])
             res.status(200).send(dbRes[0])
         })
         .catch(err => console.log(err))

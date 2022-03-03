@@ -23,13 +23,16 @@
             </div>
         </div>   
         <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
-        <a><input id="navbtn"
+        <div>
+            <input id="navbtn"
                 class="search-field"
                 type="search" 
-                placeholder="Find a Recipe..." /></a>
-        <div class="sign-in">
-            <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
+                placeholder="Find a Recipe..." onsearch="searchRecipes()"/>
+            <div class="result-content"></div>
         </div>
+        <!-- <div class="sign-in">
+            <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
+        </div> -->
     </nav>
 </header>
 <main>
@@ -82,6 +85,7 @@
 </main>
 
 
-
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src='client.js'></script>
 </body>
 </html>

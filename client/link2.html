@@ -6,7 +6,6 @@
     <meta name="viewport" content="initial-scale=1.0"> 
     <title>link2</title>
     <link rel="stylesheet" href="recipes.css">
-    <!-- <link rel="stylesheet" href="link2.css"> -->
     <link rel="stylesheet" href="layout.css">
     
 </head>
@@ -24,13 +23,16 @@
             </div>
         </div>   
         <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
-        <a><input id="navbtn"
+        <div>
+            <input id="navbtn"
                 class="search-field"
                 type="search" 
-                placeholder="Find a Recipe..." /></a>
-        <div class="sign-in">
+                placeholder="Find a Recipe..." onsearch="searchRecipes()"/>
+            <div class="result-content"></div>
+        </div>
+        <!-- <div class="sign-in">
             <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
-        </div>    
+        </div>     -->
     
     </nav>
 </header>
@@ -112,6 +114,6 @@
 </footer>
 
     <script src="../node_modules/axios/dist/axios.min.js"></script>
-    <script src='./link1.js'></script>
+    <script src='client.js'></script>
 </body>
 </html>

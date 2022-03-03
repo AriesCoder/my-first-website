@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="layout.css">
 </head>
 <body>
+<!-- landing -->
+    <div id="landing-container">  
+        <form id="user-info">
+            <h1 id="title">Let's keep in touch</h1>
+            <h3 id="username">Enter your name</h3>
+            <input class="username" id="user-input" type="text" required/>
+            <h3 id="useremail">Enter your email</h3>
+            <input class="useremail" id="user-input" type="text" required/>
+            <button id="user-submit">Submit</button>
+        </form>
+    </div>
+
     <header class="nav-container">
 <!-- navigation bar -->
         <nav class="topnav">         
@@ -22,15 +34,18 @@
                 </div>
             </div>   
             <a href="./menu.html" class="menu" id="navbtn">MENU</a>  
-            <a><input id="navbtn"
+            <div>
+                <input id="navbtn"
                     class="search-field"
                     type="search" 
-                    placeholder="Find a Recipe..." /></a>
+                    placeholder="Find a Recipe..." onsearch="searchRecipes()"/>
+                <div class="result-content"></div>
+            </div>
 
-            <div class="sign-in">
-                <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>
+            <!-- <div class="sign-in">
+                <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button> -->
                 <!-- sign in form -->
-                <div class="form-popup" id="myForm">
+                <!-- <div class="form-popup" id="myForm">
                     <form action="/action_page.php" class="form-container">
                         <h1>Login</h1>
 
@@ -45,7 +60,7 @@
                         <a style="font-size: 14px;" href="https://www.">Create an Account</a>
                     </form>
                 </div> 
-            </div>
+            </div> -->
         </nav>
 
         <script>
@@ -57,8 +72,9 @@
               document.getElementById("myForm").style.display = "none";
             }
         </script>
-    </header>
-    <main>
+</header>
+<main>
+
 <!-- The background video -->
     <div class="background">
         <video autoplay muted loop id="myVideo">
@@ -81,18 +97,18 @@
         <span id="welcome">E</span>
         <span id="welcome">S</span>
     </div>
-<div class="follow-container">
-    <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D">
-    <img src="./source/tt.jpeg" class="tt" id="follow"></a>
-    <a href="https://www.instagram.com/accounts/login/">
-    <img src="./source/insta.jpeg" class="ig" id="follow"></a>
-    <a href="https://www.facebook.com/login/">
-    <img src="./source/fb.jpeg" class="fb" id="follow"></a>
-</div>
+    <div class="follow-container">
+        <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D">
+        <img src="./source/tt.jpeg" class="tt" id="follow"></a>
+        <a href="https://www.instagram.com/accounts/login/">
+        <img src="./source/insta.jpeg" class="ig" id="follow"></a>
+        <a href="https://www.facebook.com/login/">
+        <img src="./source/fb.jpeg" class="fb" id="follow"></a>
+    </div>
 </main>
     
   
 
-   
+   <script src="landing.js"></script>
 </body>
 </html>
