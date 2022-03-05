@@ -7,6 +7,7 @@
     <title>home</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="layout.css">
+    <!-- <link rel="stylesheet" href="recipes.css"> -->
 </head>
 <body>
 <!-- landing -->
@@ -42,8 +43,9 @@
                 <div class="result-content"></div>
             </div>
 
-            <!-- <div class="sign-in">
-                <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button> -->
+            <div class="exit" >
+                <button class="exit-btn" id="navbtn" onclick="exitOnClick()" style="display:none">EXIT </button>
+            </div>
                 <!-- sign in form -->
                 <!-- <div class="form-popup" id="myForm">
                     <form action="/action_page.php" class="form-container">
@@ -63,7 +65,7 @@
             </div> -->
         </nav>
 
-        <script>
+        <!-- <script>
             function openForm() {
               document.getElementById("myForm").style.display = "block";
             }
@@ -71,7 +73,7 @@
             function closeForm() {
               document.getElementById("myForm").style.display = "none";
             }
-        </script>
+        </script> -->
 </header>
 <main>
 
@@ -108,7 +110,7 @@
 </main>
     
   
-
-   <script src="landing.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script> 
+   <script src="client.js"></script>
 </body>
 </html>

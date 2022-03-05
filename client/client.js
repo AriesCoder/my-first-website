@@ -7,7 +7,16 @@ const filterBtn = document.querySelector('.stars')
 const filterCmt = document.querySelector('.fil-cmt')
 const filterCont = document.querySelector('.filter-container')
 const searchInput = document.querySelector('.search-field')
+const useremailInput = document.querySelector('.useremail')
+const usernameInput = document.querySelector('.username')
+const userInfo = document.getElementById('user-info')
+const exitBtn = document.querySelector('.exit-btn')
 const pageTitle = document.title 
+const id_map = {
+  link1 : 1,
+  link2 : 2,
+  link3 : 3
+}
 
 function dropDownBtn() {
     dropBtn.classList.toggle("show");
@@ -40,48 +49,54 @@ window.onclick = function(event) {
 }
 
 function submitHandler(event){
-    let userRating = document.querySelector('input[name="rate"]:checked').value
     event.preventDefault()
+    let id = id_map[pageTitle]
+    let userRating = document.querySelector('input[name="rate"]:checked').value
+    let {username} =  window.localStorage
     let body = {
-        name: nameInput.value,
+        name: username,
         rating: userRating,
-        comment: userComment.value
+        comment: userComment.value,
+        recipe_id: id
     }
 
     axios.post('http://localhost:4004/link1', body)
     .then(()=>{
-        nameInput.value = ''
         userComment.value = ''
         document.querySelector('input[name="rate"]:checked').checked = false
-        getComments()
+        getAllCmtByPage(id)
     })
 }
 
 function deleteComment(id) {
     axios.delete(`http://localhost:4004/link1/${id}`)
-        .then(() => getComments())
+        .then(() => getAllCmtByPage(id_map[pageTitle]))
         .catch(err => console.log(err))
 }
 
-function getCmtByPage(){
+function getAllCmtByPage(id){
     commentList.innerHTML = ''
-    const id_map = {
-      link1 : 1,
-      link2 : 2,
-      link3 : 3
-    }
-    let id = id_map[pageTitle]
     axios.get(`http://localhost:4004/comments/${id}`)
     .then(res => {
-      console.log(res.data)
+      let {username} =  window.localStorage
+      let commentCard = ''
         res.data.forEach(elem =>{
-            let commentCard = `<div class="comment-card">
-            <h2>${elem.name}: </h2>
-            <p style="font-size:20px">${elem.comment}</p>
-            <h3>Rating: ${elem.rating}/5</h3>
-            <button onclick="deleteComment(${elem['comment_id']})">Delete</button>
-            </div>
-        `
+            if (username === elem.name) {
+              commentCard = `<div class="comment-card">
+              <h2>${elem.name}: </h2>
+              <p style="font-size:20px">${elem.comment}</p>
+              <h3>Rating: ${elem.rating}/5</h3>
+              <button onclick="deleteComment(${elem.comment_id})">Delete</button>
+              </div>
+              `
+            } else {
+              commentCard = `<div class="comment-card">
+              <h2>${elem.name}: </h2>
+              <p style="font-size:20px">${elem.comment}</p>
+              <h3>Rating: ${elem.rating}/5</h3>
+              </div>
+              `
+            }
         commentList.innerHTML += commentCard
         })
     })
@@ -132,7 +147,6 @@ function searchRecipes(){
 function getRating(rate){
   filterCont.innerHTML = ''
   filterCont.innerHTML += "<br><button class='closebutton' onclick='doClose()' >X </button><br>"; 
-    console.log(rate)
     axios.get(`http://localhost:4004/link1/${rate}`)
     .then(res => {
       res.data.forEach(elem =>{
@@ -148,10 +162,48 @@ function getRating(rate){
   })
 }
 function doClose(){
-  filterCont.innerHTML = ''
+    filterCont.innerHTML = ''
+}
+
+function exitOnClick(){
+    window.localStorage.removeItem('username')
+    window.localStorage.removeItem('useremail')
+    window.location.href = './home.html'
+    exitBtn.style.display = 'none'
+    document.getElementById('landing-container').style.visibility = 'visible'
+}
+
+// landing
+if(pageTitle ==='home'){
+  userInfo.addEventListener('submit', (e) => {
+    e.preventDefault()
+    window.localStorage.setItem('username', usernameInput.value)
+    console.log('local', window.localStorage, typeof window.localStorage)
+    window.localStorage.setItem('useremail', useremailInput.value)
+    document.getElementById('landing-container').style.visibility = 'hidden'
+    exitBtn.style.display = 'block'
+})
+
+function landingPage(){
+    let localSt = window.localStorage.length
+    console.log(localSt)
+    if(localSt === 0){
+        document.getElementById('landing-container').style.visibility = 'visible'
+        exitBtn.style.display = 'none'
+    }else{
+        document.getElementById('landing-container').style.visibility = 'hidden'
+        exitBtn.style.display = 'block'
+    }
+  }
+  landingPage()
+}
+console.log("pageTitle" ,pageTitle);
+
+if( pageTitle === 'link1' || pageTitle === 'link2' || pageTitle === 'link3'){
+    getRecipe()
+    getAllCmtByPage(id_map[pageTitle])
+    console.log("link", pageTitle)
+    form.addEventListener('submit', submitHandler)
 }
 
 
-getRecipe()
-getCmtByPage()
-form.addEventListener('submit', submitHandler)

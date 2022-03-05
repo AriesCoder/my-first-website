@@ -12,11 +12,12 @@ const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
 
 module.exports = {
     createComment: (req,res) =>{
-        let {name, rating, comment} = req.body
-        sequelize.query(`INSERT INTO comments (name, rating, comment)
-        VALUES('${name}', ${rating}, '${comment}');`)
+        let {name, rating, comment, recipe_id} = req.body
+        sequelize.query(`INSERT INTO comments (name, rating, comment, recipe_id)
+        VALUES('${name}', ${rating}, '${comment}', ${recipe_id});`)
         .then(dbRes =>
-            res.status(200).send(dbRes[0]))
+            {console.log('db', dbRes)
+            res.status(201).send(dbRes[0])})
         .catch(err => console.log(err))
     },
 
@@ -25,7 +26,8 @@ module.exports = {
         console.log('repId', recipeId)
         sequelize.query(`SELECT * 
         FROM comments
-        WHERE recipe_id = ${recipeId};
+        WHERE recipe_id = ${recipeId}
+        ORDER BY comment_id DESC;
         `) 
         .then(dbArr => res.status(200).send(dbArr[0]))
         .catch(err => console.log(err))
@@ -43,7 +45,8 @@ module.exports = {
     filterRating: (req, res) =>{
         let {rate} = req.params
         sequelize.query(`SELECT * FROM comments
-        WHERE rating = ${rate};`)
+        WHERE rating = ${rate}
+        ;`)
         .then(dbRes => {
             res.status(200).send(dbRes[0])
         })

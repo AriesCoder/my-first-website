@@ -39,11 +39,11 @@
     cursor: pointer;
     border: transparent 5px solid;
 }
-.sign-in{
+.exit{
     margin-left: auto;
 }
-/* sign-in button */
-.sign-in-btn{
+/* exit button */
+.exit-btn{
     font-family: inherit;
     font-size: inherit;
     padding: 0px 25px 0px 25px;

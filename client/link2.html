@@ -30,9 +30,9 @@
                 placeholder="Find a Recipe..." onsearch="searchRecipes()"/>
             <div class="result-content"></div>
         </div>
-        <!-- <div class="sign-in">
-            <button class="sign-in-btn" id="navbtn" onclick="openForm()">SIGN IN</button>   
-        </div>     -->
+        <div class="exit" >
+            <button class="exit-btn" id="navbtn" onclick="exitOnClick()" >EXIT </button>
+        </div>
     
     </nav>
 </header>
@@ -81,9 +81,6 @@
                 <input type="radio" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">1 star</label>
             </div><br><br>
-            
-            <label id="name" for="name-input">Your Name:</label>
-            <input type='text' id="name-input" style="height:30px;width:200px;font-size:16px;float:right"/ required><br><br>
 
             <label for="comment">Comment:</label>
             <textarea id="comment-text"></textarea><br>
