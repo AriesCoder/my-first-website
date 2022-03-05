@@ -3,7 +3,7 @@ const express = require("express")
 const path = require("path")
 const cors = require('cors')
 const app = express()
-const {SERVER_PORT} = process.env
+// const {SERVER_PORT} = process.env
 const {createComment, getCmtByRecipeId, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 const {seed} = require('./seed.js')
 
@@ -33,7 +33,7 @@ app.get('/search/:input', findRecipes)
 //DEV
 app.post('/seed', seed)
 
-app.listen(SERVER_PORT, ()=>{
-    console.log(`Listening on port ${SERVER_PORT}`)
+app.listen(process.env.PORT || 5000, ()=>{
+    console.log(`Listening on port ${PORT}`)
 })
 
