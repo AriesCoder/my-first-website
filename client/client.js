@@ -60,7 +60,7 @@ function submitHandler(event){
         recipe_id: id
     }
 
-    axios.post('http://localhost:5000/link1', body)
+    axios.post('http://localhost:5001/link1', body)
     .then(()=>{
         userComment.value = ''
         document.querySelector('input[name="rate"]:checked').checked = false
@@ -69,14 +69,14 @@ function submitHandler(event){
 }
 
 function deleteComment(id) {
-    axios.delete(`http://localhost:5000/link1/${id}`)
+    axios.delete(`http://localhost:5001/link1/${id}`)
         .then(() => getAllCmtByPage(id_map[pageTitle]))
         .catch(err => console.log(err))
 }
 
 function getAllCmtByPage(id){
     commentList.innerHTML = ''
-    axios.get(`http://localhost:5000/comments/${id}`)
+    axios.get(`http://localhost:5001/comments/${id}`)
     .then(res => {
       let {username} =  window.localStorage
       let commentCard = ''
@@ -113,7 +113,7 @@ function getRecipe(){
       link3 : "banhxeo",
     }
     let name = page_map[pageTitle]
-    axios.get(`http://localhost:5000/recipes/${name}`)
+    axios.get(`http://localhost:5001/recipes/${name}`)
       .then(res => {
         recipeName.textContent += res.data[0].title
         ingredients.innerText += res.data[0].ingredients
@@ -128,7 +128,7 @@ function searchRecipes(){
   let result = document.querySelector('.result-content')
   result.innerHTML = ''
   let resultCard = ''
-  axios.get(`http://localhost:5000/search/${input}`)
+  axios.get(`http://localhost:5001/search/${input}`)
   .then(res => { 
     if(res.data[0] === undefined){
       resultCard = `<div class="result-card">
@@ -147,7 +147,7 @@ function searchRecipes(){
 function getRating(rate){
   filterCont.innerHTML = ''
   filterCont.innerHTML += "<br><button class='closebutton' onclick='doClose()' >X </button><br>"; 
-    axios.get(`http://localhost:5000/link1/${rate}`)
+    axios.get(`http://localhost:5001/link1/${rate}`)
     .then(res => {
       res.data.forEach(elem =>{
           let commentCard = `<div class="comment-card">
