@@ -10,9 +10,9 @@ const {seed} = require('./seed.js')
 app.use(express.json())
 app.use(cors())
 
-// app.get("/", function(req, res){   
-//     res.sendFile(path.join(__dirname, '../client/home.html'))  
-// })
+app.get("/", function(req, res){   
+    res.sendFile(path.join(__dirname, '../client/home.html'))  
+})
 
 app.use(express.static(path.join(__dirname, '../client/')))
 
