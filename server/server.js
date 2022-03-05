@@ -33,24 +33,6 @@ app.get('/search/:input', findRecipes)
 //DEV
 app.post('/seed', seed)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const port = process.env.PORT || 5432
-
 app.listen(SERVER_PORT, ()=>{
     console.log(`Listening on port ${SERVER_PORT}`)
 })
