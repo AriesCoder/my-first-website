@@ -3,14 +3,14 @@ const express = require("express")
 const path = require("path")
 const cors = require('cors')
 const app = express()
-const {SERVER_PORT} = process.env
+const SERVER_PORT = process.env.PORT || 5002
 const {seed} = require('./seed.js')
 const {createComment, getCmtByRecipeId, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
 
-app.get("/server", function(req, res){   
+app.get("/", function(req, res){   
     res.sendFile(path.join(__dirname, '../client/home.html'))  
 })
 
