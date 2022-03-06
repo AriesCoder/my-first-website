@@ -4,13 +4,13 @@ const path = require("path")
 const cors = require('cors')
 const app = express()
 const {SERVER_PORT} = process.env
-const {createComment, getCmtByRecipeId, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 const {seed} = require('./seed.js')
+const {createComment, getCmtByRecipeId, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
 
-app.get("/", function(req, res){   
+app.get("/server", function(req, res){   
     res.sendFile(path.join(__dirname, '../client/home.html'))  
 })
 
