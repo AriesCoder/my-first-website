@@ -3,7 +3,7 @@ const express = require("express")
 const path = require("path")
 const cors = require('cors')
 const app = express()
-const port = process.env.PORT || 5001
+const port = process.env.PORT
 const {seed} = require('./seed.js')
 const {createComment, getCmtByRecipeId, deleteComment, filterRating, getRecipeByName, findRecipes} = require('./controller.js')
 
