@@ -16,6 +16,13 @@ app.get("/", function(req, res){
 
 app.use(express.static(path.join(__dirname, '../client/')))
 
+app.get('/axios.min.js', function(req, res) {
+    res.sendFile(path.join(__dirname, '../node_modules/axios/dist/axios.min.js'));
+});
+app.get('/axios.min.map', function(req, res) {
+    res.sendFile(path.join(__dirname, '../node_modules/axios/dist/axios.min.map'));
+});
+
 //get all comments
 app.get('/comments/:id', getCmtByRecipeId)
 //create comment
